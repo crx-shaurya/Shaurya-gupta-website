@@ -1,81 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #0a0a0a, #3a0ca3);
-  color: white;
-  overflow-x: hidden;
-  cursor: none;
+background: #b84fff;
+color: white;
+border: none;
+cursor: pointer;
+font-size: 1.2rem;
+transition: 0.3s;
 }
 
-section {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.name {
-  font-size: 4rem;
-  font-weight: 700;
-}
-
-.tagline {
-  font-size: 1.5rem;
-  margin: 10px 0 20px;
-  color: #c9c9ff;
-}
-
-.cta {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #7b2cbf;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
 
 .cta:hover {
-  background: #9d4edd;
+background: #ff4fff;
+box-shadow: 0 0 15px #ff4fff;
 }
 
-.skills-list, .project-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
+
+.hero-3d {
+flex: 1;
+height: 100vh;
 }
 
-.skills-list span, .project-card {
-  background: rgba(255,255,255,0.1);
-  padding: 10px 20px;
-  border-radius: 8px;
+
+#three-canvas {
+width: 100%;
+height: 100%;
+display: block;
 }
 
-.project-card {
-  width: 200px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-/* Custom Cursor */
 .cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: 0.1s;
-  z-index: 9999;
+width: 20px;
+height: 20px;
+border: 2px solid #b84fff;
+border-radius: 50%;
+position: fixed;
+transform: translate(-50%, -50%);
+pointer-events: none;
+transition: transform 0.1s;
+z-index: 1000;
 }
