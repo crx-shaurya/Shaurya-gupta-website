@@ -1,46 +1,36 @@
-// Loading Screen
+// Preloader Animation
 window.addEventListener("load", () => {
-  document.getElementById("loading-screen").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("loading-screen").style.display = "none";
-  }, 1000);
+  document.getElementById("preloader").style.display = "none";
 });
 
-// Custom Cursor
-const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
 });
 
-// GSAP Animations
-gsap.from(".hero h1", { y: -50, opacity: 0, duration: 1, delay: 0.5 });
-gsap.from(".hero p", { y: 50, opacity: 0, duration: 1, delay: 1 });
-gsap.from(".hero button", { scale: 0, opacity: 0, duration: 1, delay: 1.5 });
-
-// 3D Boy Model
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("boy-canvas"), alpha: true });
+// Three.js Basic Animated Sphere
+const canvas = document.getElementById("bgCanvas");
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
+const scene = new THREE.Scene();
 
-// Light
-const light = new THREE.PointLight(0xffffff, 1);
-light.position.set(2, 3, 4);
-scene.add(light);
-
-// Boy (simple 3D sphere now, replace with real model later)
-const geometry = new THREE.SphereGeometry(1, 32, 32);
-const material = new THREE.MeshStandardMaterial({ color: 0x9933ff });
-const boy = new THREE.Mesh(geometry, material);
-scene.add(boy);
-
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
 
-// Animation
+const geometry = new THREE.SphereGeometry(1, 32, 32);
+const material = new THREE.MeshBasicMaterial({ color: 0x8000ff, wireframe: true });
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
+
 function animate() {
   requestAnimationFrame(animate);
-  boy.rotation.y += 0.01;
+  sphere.rotation.x += 0.01;
+  sphere.rotation.y += 0.01;
   renderer.render(scene, camera);
 }
 animate();
