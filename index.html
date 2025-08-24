@@ -3,50 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dhruv - Portfolio</title>
+  <title>Dhruv | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <h1>Loading...</h1>
-  </div>
+  <div class="cursor"></div>
 
   <!-- Hero Section -->
-  <section id="hero">
-    <canvas id="bgCanvas"></canvas> <!-- 3D background -->
-
-    <div class="hero-content">
-      <h1>Dhruv</h1>
-      <h2>Building Modern Web Experiences</h2>
-      <p>Web Developer | AI Enthusiast | Designer</p>
-      <a href="mailto:youremail@example.com" class="cta-btn">Contact Me</a>
-    </div>
+  <section class="hero">
+    <h1 class="name">Dhruv</h1>
+    <p class="tagline">Building Modern AI Solutions & Futuristic Web Experiences</p>
+    <a href="mailto:yourmail@example.com" class="cta">Contact Me</a>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
+  <!-- Skills Section -->
+  <section class="skills">
     <h2>My Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">HTML5</div>
-      <div class="skill">CSS3</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Three.js</div>
+    <div class="skills-list">
+      <span>AI & ML</span>
+      <span>Web Development</span>
+      <span>3D Animations</span>
+      <span>Automation</span>
     </div>
   </section>
 
-  <!-- Featured Projects -->
-  <section id="projects">
+  <!-- Projects Section -->
+  <section class="projects">
     <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project">Project 1</div>
-      <div class="project">Project 2</div>
-      <div class="project">Project 3</div>
+    <div class="project-list">
+      <div class="project-card">Project 1</div>
+      <div class="project-card">Project 2</div>
+      <div class="project-card">Project 3</div>
     </div>
+    <a href="projects.html" class="view-all">View All Projects</a>
   </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Let's Build Something Great</h2>
+    <a href="mailto:yourmail@example.com" class="cta">Contact Me</a>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
